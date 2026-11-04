@@ -96,6 +96,9 @@ TROUBLESHOOTING.md if that option doesn't appear.
 
 Prefer not to run an unnotarized download, or need an Intel build? Build it from source instead — see
 `BUILDING.md`. You'll need Xcode (for the Swift app) and the .NET SDK (for the file-reading Helper).
+There's no `.xcodeproj` to double-click — the app is a Swift package, so you either open
+`App/Package.swift` directly in Xcode or build it from the command line with `swift build`; both are
+covered in `BUILDING.md`.
 
 ## Status
 
