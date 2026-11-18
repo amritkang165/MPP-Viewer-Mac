@@ -6,6 +6,9 @@ a working-time calendar editor, project-budget tracking, and export.
 
 This is a macOS port of an existing Windows WPF/.NET application (`MPP-Viewer`).
 
+**[ramos1053.github.io/MPP-Viewer-Mac](https://ramos1053.github.io/MPP-Viewer-Mac/)** has screenshots,
+the full format list and a download link.
+
 ## What it does
 
 - **Opens** Microsoft Project (`.mpp`, `.mpt`), Project XML/MSPDI (`.xml`), Microsoft Project Exchange
