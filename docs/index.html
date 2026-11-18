@@ -83,7 +83,71 @@
   .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 20px 22px; }
   footer { margin: 72px 0 48px; padding-top: 24px; border-top: 1px solid var(--line); color: var(--muted); font-size: 15px; }
   code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.92em; background: var(--panel); padding: 2px 5px; border-radius: 4px; }
+  details { border-top: 1px solid var(--line); padding: 14px 0; }
+  details summary { cursor: pointer; font-weight: 600; list-style: none; }
+  details summary::-webkit-details-marker { display: none; }
+  details summary::before { content: "+ "; color: var(--muted); }
+  details[open] summary::before { content: "– "; }
+  details p { margin: 12px 0 0; }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "MPP Viewer",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "macOS 26 or later, Apple Silicon",
+  "url": "https://ramos1053.github.io/MPP-Viewer-Mac/",
+  "downloadUrl": "https://github.com/ramos1053/MPP-Viewer-Mac/releases/latest",
+  "softwareVersion": "0.1.2",
+  "license": "https://opensource.org/licenses/MIT",
+  "description": "A free, native macOS app that opens and edits Microsoft Project .mpp files, plus Primavera P6, GanttProject and Asta Powerproject formats. Files are read locally and never uploaded.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I open an .mpp file without Microsoft Project?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. MPP Viewer reads .mpp files directly and does not need Microsoft Project installed, or any licence for it." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I open a Microsoft Project file on a Mac for free?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Download the MPP Viewer installer, run it, and open the file. The app is free and open source under the MIT licence, with no account or subscription." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I convert an .mpp file to Excel or CSV?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. MPP Viewer exports the full task list to CSV, which Excel and Numbers both open. It can also export the whole project as a PDF." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I edit the file, or only view it?",
+      "acceptedAnswer": { "@type": "Answer", "text": "You can edit task names, durations, dates, percent complete, dependencies, notes and resource assignments, with undo. Saving writes Project XML (MSPDI) rather than back into the original .mpp file." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it work on an Intel Mac?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The prebuilt installer is Apple Silicon only. On an Intel Mac you can build it from source, which is documented in the repository." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my project file uploaded anywhere?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. The file is read on your own machine. There are no accounts, no telemetry and no network calls during normal use, and the source code is public so you can verify that." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can it open Primavera P6 files?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. It reads Primavera P6 .xer and .pmxml files, along with GanttProject, Asta Powerproject, SureTrak and Phoenix Project Manager formats." }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -181,6 +245,52 @@
       <a href="https://github.com/ramos1053/MPP-Viewer-Mac/blob/main/BUILDING.md">build instructions</a>
       cover compiling it yourself.</p>
   </div>
+
+  <h2>Common questions</h2>
+
+  <details open>
+    <summary>Can I open an .mpp file without Microsoft Project?</summary>
+    <p>Yes. MPP Viewer reads <code>.mpp</code> files directly and does not need Microsoft Project
+      installed, or any licence for it.</p>
+  </details>
+
+  <details>
+    <summary>How do I open a Microsoft Project file on a Mac for free?</summary>
+    <p>Download the installer above, run it, and open the file. The app is free and open source under the
+      MIT licence, with no account and no subscription.</p>
+  </details>
+
+  <details>
+    <summary>Can I convert an .mpp file to Excel or CSV?</summary>
+    <p>Yes. MPP Viewer exports the full task list to CSV, which both Excel and Numbers open. It can also
+      export the entire project as a PDF, or print a timeline snapshot.</p>
+  </details>
+
+  <details>
+    <summary>Can I edit the file, or only view it?</summary>
+    <p>You can edit task names, durations, dates, percent complete, dependencies, notes and resource
+      assignments, with undo for essentially every change. The one limit is on saving: it writes Project
+      XML (MSPDI) rather than back into the original <code>.mpp</code> file.</p>
+  </details>
+
+  <details>
+    <summary>Does it work on an Intel Mac?</summary>
+    <p>The prebuilt installer is Apple Silicon only. On an Intel Mac you can build it from source, which
+      is covered in the
+      <a href="https://github.com/ramos1053/MPP-Viewer-Mac/blob/main/BUILDING.md">build instructions</a>.</p>
+  </details>
+
+  <details>
+    <summary>Is my project file uploaded anywhere?</summary>
+    <p>No. The file is read on your own machine. There are no accounts, no telemetry and no network calls
+      during normal use, and the source code is public so you can check that for yourself.</p>
+  </details>
+
+  <details>
+    <summary>Can it open Primavera P6 files?</summary>
+    <p>Yes. It reads Primavera P6 <code>.xer</code> and <code>.pmxml</code> files, along with
+      GanttProject, Asta Powerproject, SureTrak and Phoenix Project Manager formats.</p>
+  </details>
 
   <h2>How it is built</h2>
   <p>The interface is native Swift and AppKit. File reading and writing happen in a separate .NET helper

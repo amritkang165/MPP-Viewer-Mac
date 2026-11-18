@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ramos1053.github.io/MPP-Viewer-Mac/sitemap.xml
