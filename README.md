@@ -1,8 +1,9 @@
 # MPP Viewer (macOS)
 
-A native Swift/AppKit macOS app for viewing and editing Microsoft Project and related project-management
-file formats. It has a Gantt chart, Timeline, Network (PERT) diagram, Calendar (with three modes), Resources,
-a working-time calendar editor, project-budget tracking, and export.
+Open and edit `.mpp` files on a Mac, without Microsoft Project. A native Swift/AppKit macOS app for
+viewing and editing Microsoft Project and related project-management file formats. It has a Gantt chart,
+Timeline, Network (PERT) diagram, Calendar (with three modes), Resources, a working-time calendar editor,
+project-budget tracking, and export.
 
 This is a macOS port of an existing Windows WPF/.NET application (`MPP-Viewer`).
 
