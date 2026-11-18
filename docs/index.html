@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MPP Viewer: Open Microsoft Project files on a Mac</title>
+<meta name="description" content="A free, native macOS app that opens and edits Microsoft Project .mpp files, plus Primavera P6, GanttProject and more. Gantt, timeline, network and calendar views. Works offline, nothing is uploaded.">
+<link rel="canonical" href="https://ramos1053.github.io/MPP-Viewer-Mac/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="MPP Viewer: Open Microsoft Project files on a Mac">
+<meta property="og:description" content="A free, native macOS app for .mpp files. Gantt, timeline, network and calendar views, with a live critical path. Works offline.">
+<meta property="og:image" content="https://ramos1053.github.io/MPP-Viewer-Mac/screenshots/gantt-view.png">
+<meta property="og:url" content="https://ramos1053.github.io/MPP-Viewer-Mac/">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+  :root {
+    --bg: #ffffff;
+    --panel: #f6f7f9;
+    --text: #15181d;
+    --muted: #5b6472;
+    --line: #e2e6ec;
+    --accent: #1f6feb;
+    --accent-text: #ffffff;
+    --warn-bg: #fff8e6;
+    --warn-line: #e8d9a8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0f1216;
+      --panel: #171b21;
+      --text: #e8ecf1;
+      --muted: #9aa5b4;
+      --line: #262c35;
+      --accent: #4b8bf5;
+      --accent-text: #0b0e12;
+      --warn-bg: #241f12;
+      --warn-line: #4a4027;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0f1216; --panel: #171b21; --text: #e8ecf1; --muted: #9aa5b4;
+    --line: #262c35; --accent: #4b8bf5; --accent-text: #0b0e12;
+    --warn-bg: #241f12; --warn-line: #4a4027;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  .wrap { max-width: 900px; margin: 0 auto; padding: 0 16px; }
+  header { padding: 72px 0 48px; border-bottom: 1px solid var(--line); }
+  h1 { font-size: clamp(30px, 5.2vw, 44px); line-height: 1.15; margin: 0 0 16px; letter-spacing: -0.02em; }
+  .lede { font-size: clamp(18px, 2.4vw, 21px); color: var(--muted); margin: 0 0 32px; max-width: 42em; }
+  .cta { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+  .btn {
+    display: inline-block; padding: 13px 22px; border-radius: 8px;
+    background: var(--accent); color: var(--accent-text);
+    text-decoration: none; font-weight: 600;
+  }
+  .btn.secondary { background: transparent; color: var(--text); border: 1px solid var(--line); }
+  .req { color: var(--muted); font-size: 15px; margin: 18px 0 0; }
+  h2 { font-size: clamp(22px, 3.2vw, 28px); margin: 56px 0 14px; letter-spacing: -0.01em; }
+  h3 { font-size: 18px; margin: 26px 0 6px; }
+  p { margin: 0 0 16px; }
+  a { color: var(--accent); }
+  ul { padding-left: 22px; margin: 0 0 16px; }
+  li { margin-bottom: 7px; }
+  figure { margin: 0 0 28px; }
+  figure img {
+    width: 100%; height: auto; display: block;
+    border: 1px solid var(--line); border-radius: 10px; background: var(--panel);
+  }
+  figcaption { color: var(--muted); font-size: 14px; margin-top: 8px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+  .note {
+    background: var(--warn-bg); border: 1px solid var(--warn-line);
+    border-radius: 8px; padding: 16px 18px; margin: 24px 0;
+  }
+  .note p:last-child { margin-bottom: 0; }
+  .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 20px 22px; }
+  footer { margin: 72px 0 48px; padding-top: 24px; border-top: 1px solid var(--line); color: var(--muted); font-size: 15px; }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.92em; background: var(--panel); padding: 2px 5px; border-radius: 4px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <h1>Open Microsoft Project files on a Mac</h1>
+    <p class="lede">MPP Viewer is a free, native macOS app that reads and edits <code>.mpp</code> files
+      without Microsoft Project, without a subscription, and without uploading your schedule to anyone's server.</p>
+    <div class="cta">
+      <a class="btn" href="https://github.com/ramos1053/MPP-Viewer-Mac/releases/latest">Download the installer</a>
+      <a class="btn secondary" href="https://github.com/ramos1053/MPP-Viewer-Mac">View the source on GitHub</a>
+    </div>
+    <p class="req">Free and open source under the MIT license. Requires an Apple Silicon Mac running macOS 26 or later.</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <h2>Your project file stays on your machine</h2>
+  <p>Most free ways to open an <code>.mpp</code> file on a Mac ask you to upload it first. If your schedule
+    carries client names, staffing or budgets, that is often the end of the conversation.</p>
+  <p>MPP Viewer reads the file locally. It has no accounts, no telemetry and no network calls during normal
+    use. You can confirm that yourself, because the source is public.</p>
+
+  <h2>What it looks like</h2>
+
+  <figure>
+    <img src="screenshots/gantt-view.png" alt="Gantt chart view showing a task table, bars and dependency links, with the critical path highlighted in red" loading="lazy">
+    <figcaption>The Gantt view, with the critical path highlighted. Task names, durations, dates, percent complete and dependencies are all editable in place.</figcaption>
+  </figure>
+
+  <div class="grid">
+    <figure>
+      <img src="screenshots/network-view.png" alt="Network PERT diagram showing task boxes connected by dependency arrows" loading="lazy">
+      <figcaption>Network view, a PERT-style dependency diagram laid out by depth.</figcaption>
+    </figure>
+    <figure>
+      <img src="screenshots/calendar-month-view.png" alt="Month calendar grid with task bars spanning days" loading="lazy">
+      <figcaption>Calendar view in Month mode.</figcaption>
+    </figure>
+    <figure>
+      <img src="screenshots/resources-view.png" alt="Resource sheet listing resources with type, group, max units, rates and codes" loading="lazy">
+      <figcaption>The resource sheet, with rates, availability and over-allocation warnings.</figcaption>
+    </figure>
+    <figure>
+      <img src="screenshots/calendar-taskusage-view.png" alt="Task usage spreadsheet showing hours per day for each assignment" loading="lazy">
+      <figcaption>Task Usage mode, showing timephased work per assignment.</figcaption>
+    </figure>
+  </div>
+
+  <h2>File formats it opens</h2>
+  <p>Reading is handled by the <a href="https://www.mpxj.org/">MPXJ</a> library, so the list goes well beyond Microsoft Project:</p>
+  <ul>
+    <li>Microsoft Project: <code>.mpp</code>, <code>.mpt</code></li>
+    <li>Microsoft Project XML, also called MSPDI: <code>.xml</code></li>
+    <li>Microsoft Project Exchange: <code>.mpx</code></li>
+    <li>Primavera P6: <code>.xer</code>, <code>.pmxml</code></li>
+    <li>GanttProject: <code>.gan</code></li>
+    <li>Asta Powerproject: <code>.pp</code>, <code>.ppx</code></li>
+    <li>SureTrak: <code>.stx</code>, Phoenix Project Manager: <code>.pod</code>, and several others</li>
+  </ul>
+
+  <h2>What you can do with a file once it is open</h2>
+  <ul>
+    <li>Five views: Gantt, Timeline, Network, Calendar with Month, Team and Task Usage modes, and Resources.</li>
+    <li>Edit task names, durations, dates, percent complete, predecessors with type and lag, notes and resource assignments.</li>
+    <li>A live critical path that recalculates as you edit, using a real backward pass for late dates and float.</li>
+    <li>Project budget tracking, comparing planned cost against progress-weighted earned cost, per resource.</li>
+    <li>Export the task list to CSV, export the whole project as a PDF, or print a timeline snapshot.</li>
+    <li>Find and replace across task names and notes, and undo for essentially every edit.</li>
+  </ul>
+
+  <h2>Things you should know before downloading</h2>
+  <div class="panel">
+    <h3>Saving writes Project XML, not .mpp</h3>
+    <p>Save and Save As always produce Project XML (MSPDI), whatever format you opened. Microsoft Project
+      reads that format, so the round trip works, but it will not write back into the original
+      <code>.mpp</code> file. The underlying library reads far more formats than it can safely write.</p>
+
+    <h3>Scheduling does not use working-time calendars yet</h3>
+    <p>You can define working weeks and holidays, and that data is saved correctly, but the scheduler
+      currently assumes a fixed eight hour day and five day week. On a project that leans on Microsoft
+      Project's calendar rules, dates and the critical path can drift by however many non-working days
+      fall inside the span.</p>
+
+    <h3>It is early software</h3>
+    <p>The current release is version 0.1.2 and development is active. Bug reports are genuinely welcome.</p>
+  </div>
+
+  <div class="note">
+    <p><strong>macOS will warn you on first launch.</strong> The app and installer are signed with a
+      Developer ID, but they are not notarized yet, so Gatekeeper flags them. After the first blocked
+      attempt, open System Settings, then Privacy &amp; Security, and choose "Open Anyway" next to the
+      app's name. If you would rather not run an unnotarized download, or you need an Intel build, the
+      <a href="https://github.com/ramos1053/MPP-Viewer-Mac/blob/main/BUILDING.md">build instructions</a>
+      cover compiling it yourself.</p>
+  </div>
+
+  <h2>How it is built</h2>
+  <p>The interface is native Swift and AppKit. File reading and writing happen in a separate .NET helper
+    process that the app talks to over a local pipe, which is what makes the long format list possible.
+    The installer bundles that helper, so there is no separate .NET install.</p>
+  <p>Issues and pull requests are welcome on
+    <a href="https://github.com/ramos1053/MPP-Viewer-Mac">GitHub</a>.</p>
+
+</main>
+
+<footer class="wrap">
+  <p>MPP Viewer is MIT licensed and made by Alan Ramos.
+    Microsoft Project is a trademark of Microsoft Corporation. This project is not affiliated with or endorsed by Microsoft.</p>
+</footer>
+
+</body>
+</html>
