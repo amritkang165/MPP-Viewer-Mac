@@ -80,9 +80,21 @@ complete, searchable documentation of every feature from a user's point of view.
 |---|---|
 | ![Gantt view](docs/screenshots/gantt-view.png) | ![Network view](docs/screenshots/network-view.png) |
 
-| Calendar (Team mode) | Resource detail |
+| Timeline |
+|---|
+| ![Timeline view](docs/screenshots/timeline-view.png) |
+
+| Calendar (Month mode) | Calendar (Team mode) |
 |---|---|
-| ![Calendar Team mode](docs/screenshots/calendar-team-view.png) | ![Resource detail panel](docs/screenshots/resource-detail-view.png) |
+| ![Calendar Month mode](docs/screenshots/calendar-month-view.png) | ![Calendar Team mode](docs/screenshots/calendar-team-view.png) |
+
+| Calendar (Task Usage mode) | Working-time calendar editor |
+|---|---|
+| ![Calendar Task Usage mode](docs/screenshots/calendar-taskusage-view.png) | ![Calendars editor](docs/screenshots/calendars-sheet.png) |
+
+| Resource sheet | Resource detail |
+|---|---|
+| ![Resource sheet](docs/screenshots/resources-view.png) | ![Resource detail panel](docs/screenshots/resource-detail-view.png) |
 
 ## Installing
 
