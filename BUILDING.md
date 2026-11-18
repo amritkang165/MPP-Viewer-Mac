@@ -33,7 +33,7 @@ MPP-Viewer-Mac/
 
 This layout matters: `App/Sources/MPPViewerMac/AppModel.swift` locates the Helper executable by walking
 up from its own source file's path at compile time (`App/Sources/MPPViewerMac` → `App` → repo root →
-`Helper/bin/Debug/net9.0/MppHelper`). If you move `App/` and `Helper/` to different parents, or rename
+`Helper/bin/Debug/net10.0/MppHelper`). If you move `App/` and `Helper/` to different parents, or rename
 either directory, the Swift app will not find the Helper at its default location — use the
 `MPP_HELPER_PATH` environment variable to override it (see below).
 
@@ -44,7 +44,7 @@ cd Helper
 dotnet build
 ```
 
-This restores `MPXJ.Net` from NuGet and produces `Helper/bin/Debug/net9.0/MppHelper`. Rebuild it whenever
+This restores `MPXJ.Net` from NuGet and produces `Helper/bin/Debug/net10.0/MppHelper`. Rebuild it whenever
 `Helper/Program.cs` changes; the Swift app does not need rebuilding just because the Helper changed, and
 vice versa.
 

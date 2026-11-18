@@ -758,7 +758,7 @@ struct ContentView: View {
         let panel = NSOpenPanel()
         // MPXJ's UniversalProjectReader (used by the Helper's Open) auto-detects format from file
         // content, not extension — the extension list here only controls what's selectable in this
-        // dialog. Covers every reader MPXJ.Net 16.10.0 actually ships (confirmed from the assembly)
+        // dialog. Covers every reader MPXJ.Net 16.11.0 actually ships (confirmed from the assembly)
         // that's a plain single file, not a database/server connection (Primavera/SureTrak database
         // readers, PWA web services, etc. are out of scope — those need more than "open a file").
         panel.allowedContentTypes = [

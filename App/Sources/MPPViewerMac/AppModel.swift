@@ -609,12 +609,12 @@ final class AppModel: ObservableObject {
            FileManager.default.isExecutableFile(atPath: bundled.path) {
             return bundled
         }
-        // Dev-time location: Helper/bin/Debug/net9.0/MppHelper, a sibling of the App/ package.
+        // Dev-time location: Helper/bin/Debug/net10.0/MppHelper, a sibling of the App/ package.
         return URL(fileURLWithPath: #filePath)
             .deletingLastPathComponent() // Sources/MPPViewerMac
             .deletingLastPathComponent() // Sources
             .deletingLastPathComponent() // App
             .deletingLastPathComponent() // MPP-Viewer-Mac
-            .appendingPathComponent("Helper/bin/Debug/net9.0/MppHelper")
+            .appendingPathComponent("Helper/bin/Debug/net10.0/MppHelper")
     }
 }
